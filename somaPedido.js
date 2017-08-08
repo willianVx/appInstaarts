@@ -129,28 +129,6 @@ function T40x60(){
     document.getElementById("s-tamanho").innerHTML = x + "x" + y + "cm ";
     formulaTotal();
 }
-/*function tamanhoUsuario(){
-	var x, y,text;
-
-    x = document.getElementById("x").value;
-    y = document.getElementById("y").value;
-
-    if (isNaN(x) || x <= 0 || x > 100) {
-    	alert("O comprimento deve ser menor que 100");
-    }else if (isNaN(y) || y <= 0 || y > 200){
-    	alert("A largura deve ser menor que 200");
-    }else{
-    	document.getElementById("s-tamanho").innerHTML = x + "x" + y + "cm ";
-    }if (isNaN(y) || y <= 0 || y > 200) {
-        alert("Insira valores validos");	
-        }
-    if (isNaN(x) || x <= 0 || x > 100) {
-        alert("Insira valores validos");
-    } else {
-        text = "Input OK";
-        document.getElementById("s-tamanho").innerHTML = x + "x" + y + "cm ";
-    	} 
-}
 /*
     Checa tamanho personalizado
 */
@@ -262,14 +240,6 @@ function meta3(){
     document.getElementById("s-metacrilato").innerHTML = "Metacrilato 3mm" + " ";
     formulaTotal();
 }
-/*function photob(){
-    window.material = 9900;
-    window.x = 10;
-    window.y = 10;
-    document.getElementById("s-metacrilato").innerHTML = "Photobloco" + " ";
-    document.getElementById("s-tamanho").innerHTML = x + "x" + y + "cm ";
-    formulaTotal();
-}*/
 function acm5(){
     if (tipoMoldura == 3) {
         if (somaMoldura != 0){
@@ -464,23 +434,9 @@ function santiago(){
     document.getElementById("s-moldura").innerHTML = "Santiago" + " ";
     formulaTotal();
 }
-
-/*function formula(x,y){
-    var r = x * y;
-    return r;
-}
-
-function formula2(material){
-    var r2 = material * 40;
-    return r2;
-}
-
-function formula3(formula,formula2){
-    var r3 = r * r2/10000;
-}*/
 function formulaTotal(){
-        alert(window.precoBase);
-        alert(window.somaMoldura);
+        //alert(window.precoBase);
+        //alert(window.somaMoldura);
         var precoBase = window.precoBase + window.somaMoldura;
         var preco = (x * y * precoBase/10000) + 40;
         document.getElementById("s-preco").innerHTML = "R$: " + preco.toFixed(2);
