@@ -1,6 +1,6 @@
 <?php 
 include 'conexao.php';
- ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,7 +73,7 @@ include 'conexao.php';
           <form action="upload.php" method="POST" enctype="multipart/form-data" >
           <input id="imageShow" type="file" onchange="readURL(this);" name="file" required>  
           <button type="submit" name="submit">Salvar</button> 
-         </form>
+          </form>
         </div>
          <div class="modal-footer">
           <button type="button" type="submit" name="submit" class="btn btn-default" data-dismiss="modal">Ok</button>
@@ -83,7 +83,7 @@ include 'conexao.php';
       </div>
 				<p>ou</p>
 				<span><a href="#">Use uma das nossas</a></span>
-				<a href="#" onclick="return launchEditor('imageShow', 'http://localhost/appInsta/img/imagem-1.jpg')">Editar!</a>
+				<a href="#" onclick="return launchEditor('imageShow', 'http://localhost/appInsta/img/imagem-1.jpg')" >Editar!</a>
 
     <div class="somaProdutos">
       <span id="s-tamanho">40x60cm</span><span id="s-metacrilato">Metacrilato 3mm</span><span id="s-moldura"></span>=<span id="s-preco">Preço</span>
@@ -155,7 +155,7 @@ include 'conexao.php';
     			</div>
               <!-- tamanho material e moldura -->
           <div class="container m_material col-sm-4">
-                <!-- Trigger the modal with a button -->
+              <!-- Trigger the modal with a button -->
                 <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#material">Acabamento</button>
 
                 <!-- Modal -->
