@@ -181,7 +181,17 @@ function meta7(){
         if (somaMoldura != 0){
                     somaMoldura = 480;
                 }
-    }        
+    }
+    if (tipoMoldura == 2) {
+        if (somaMoldura != 0){
+                    somaMoldura = 320;
+                }
+    }  
+    if (tipoMoldura == 1) {
+        if (somaMoldura != 0){
+                    somaMoldura = 160;
+                }
+    }            
     var meta7mm = 2467;
     window.precoBase = meta7mm;
     document.getElementById("s-metacrilato").innerHTML = "Metacrilato 7mm" + " ";
@@ -194,7 +204,17 @@ function meta5(){
         if (somaMoldura != 0){
                     somaMoldura = 480;
                 }
-    } 
+    }
+    if (tipoMoldura == 2) {
+        if (somaMoldura != 0){
+                    somaMoldura = 320;
+                }
+    }   
+     if (tipoMoldura == 1) {
+        if (somaMoldura != 0){
+                    somaMoldura = 160;
+                }
+    }  
     window.meta5mm = 1771;
     window.precoBase = window.meta5mm;
     document.getElementById("s-metacrilato").innerHTML = "Metacrilato 5mm" + " ";
@@ -206,6 +226,16 @@ function meta4(){
                     somaMoldura = 506;
                 }
     } 
+    if (tipoMoldura == 2) {
+        if (somaMoldura != 0){
+                    somaMoldura = 345;
+                }
+    }   
+     if (tipoMoldura == 1) {
+        if (somaMoldura != 0){
+                    somaMoldura = 153;
+                }
+    }  
     window.meta4mm = 1392;
     window.precoBase = window.meta4mm;
     document.getElementById("s-metacrilato").innerHTML = "Metacrilato 4mm" + " ";
@@ -217,6 +247,16 @@ function meta3(){
                     somaMoldura = 320;
                 }
     }        
+    if (tipoMoldura == 2) {
+        if (somaMoldura != 0){
+                    somaMoldura = 160;
+                }
+    }   
+     if (tipoMoldura == 1) {
+        if (somaMoldura != 0){
+                    somaMoldura = 0;
+                }
+    }  
     window.meta3mm = 1265;
     window.precoBase = window.meta3mm;
     document.getElementById("s-metacrilato").innerHTML = "Metacrilato 3mm" + " ";
@@ -235,7 +275,17 @@ function acm5(){
         if (somaMoldura != 0){
                     somaMoldura = 480;
                 }
-    }        
+    } 
+    if (tipoMoldura == 2) {
+        if (somaMoldura != 0){
+                    somaMoldura = 320;
+                }
+    }          
+     if (tipoMoldura == 1) {
+        if (somaMoldura != 0){
+                    somaMoldura = 160;
+                }
+    }  
     window.acm5mm = 1518;
     window.precoBase = window.acm5mm;
     document.getElementById("s-metacrilato").innerHTML = "ACM 5mm" + " ";
@@ -243,10 +293,6 @@ function acm5(){
 }
 
 // papeis
-
-function azedo(){
-    alert("azedo");
-}
 
 function papelAlgodao(){
     window.material = 552;
@@ -283,6 +329,16 @@ function uvPs(){
                     somaMoldura = 480;
                 }
     }        
+    if (tipoMoldura == 2) {
+        if (somaMoldura != 0){
+                    somaMoldura = 320;
+                }
+    }   
+     if (tipoMoldura == 1) {
+        if (somaMoldura != 0){
+                    somaMoldura = 160;
+                }
+    }  
     window.uvPsmm = 1265;
     window.precoBase = window.uvPsmm;
     document.getElementById("s-metacrilato").innerHTML = "UV Sobre PS" + " ";
@@ -295,6 +351,16 @@ function uvAcm(){
                     somaMoldura = 480;
                 }
     }        
+    if (tipoMoldura == 2) {
+        if (somaMoldura != 0){
+                    somaMoldura = 320;
+                }
+    }   
+     if (tipoMoldura == 1) {
+        if (somaMoldura != 0){
+                    somaMoldura = 160;
+                }
+    }  
     window.uv_acm = 1553;
     window.precoBase = window.uv_acm;    
     document.getElementById("s-metacrilato").innerHTML = "UV Sobre ACM" + " ";
@@ -314,166 +380,89 @@ function florenca(){
     formulaTotal();
 }
 
-/*
+
 function instambul(){
-     if (material = 1265) {
-        window.moldura = 193;
-    }else{
-        window.moldura = 480;
-    }
+    molduraTipo3();
     document.getElementById("s-moldura").innerHTML = "Istambul" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    formulaTotal();
 }
 
 function paris(){ 
-    if (material = 1265) {
-        window.moldura = 193;
-    }else{
-        window.moldura = 480;
-    }
+    molduraTipo3();
     document.getElementById("s-moldura").innerHTML = "Paris" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    formulaTotal();
 }
 
 function roma(){
-     if (material = 1265) {
-        window.moldura = 193;
-    }else{
-        window.moldura = 480;
-    }
+     molduraTipo1();
     document.getElementById("s-moldura").innerHTML = "Roma" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    formulaTotal();
+
 }
 
 //contemporanea
 
 function atenas(){
-     if (material = 1265) {
-        window.moldura = 0;
-    }else{
-        window.moldura = 160;
-    }
+     molduraTipo1();
     document.getElementById("s-moldura").innerHTML = "Atenas" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    formulaTotal();
+  
 }
 function basel(){
-    if (material = 1392) {
-        window.moldura = 345;
-    }else if (material = 1265){
-        window.moldura = 160;    
-    }else{
-        window.moldura = 320;
-    }
+     molduraTipo2();
     document.getElementById("s-moldura").innerHTML = "Basel" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    formulaTotal();
 }
 function berlim(){
-    if (material = 1392) {
-        window.moldura = 345;
-    }else if (material = 1265){
-        window.moldura = 160;    
-    }else{
-        window.moldura = 320;
-    }
+    molduraTipo3();
     document.getElementById("s-moldura").innerHTML = "Berlim" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    formulaTotal();
 }
 function miami(){
-    if (material = 1265) {
-        window.moldura = 0;
-    }else{
-        window.moldura = 160;
-    }
-    document.getElementById("s-moldura").innerHTML = "Mimi" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+     molduraTipo1();
+    document.getElementById("s-moldura").innerHTML = "Miami" + " ";
+    formulaTotal();
+ 
 }
 function novaYork(){
-    if (material = 1392) {
-        window.moldura = 345;
-    }else if (material = 1265){
-        window.moldura = 160;    
-    }else{
-        window.moldura = 320;
-    }
-    document.getElementById("s-moldura").innerHTML = "Nova York" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    molduraTipo2();
+    document.getElementById("s-moldura").innerHTML = "New York" + " ";
+    formulaTotal();
+
 }
 function saoPaulo(){
-    if (material = 1392) {
-        window.moldura = 345;
-    }else if (material = 1265){
-        window.moldura = 160;    
-    }else{
-        window.moldura = 320;
-    }
+    molduraTipo2();
     document.getElementById("s-moldura").innerHTML = "São Paulo" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    formulaTotal();
 }
 
 //moderna
 
 function amazonas(){
-    if (material = 1392) {
-        window.moldura = 345;
-    }else if (material = 1265){
-        window.moldura = 160;    
-    }else{
-        window.moldura = 320;
-    }
+    molduraTipo2();
     document.getElementById("s-moldura").innerHTML = "Amazonas" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    formulaTotal();
 }
 function amsterdam(){
-    if (material = 1265) {
-        window.moldura = 0;
-    }else{
-        window.moldura = 160;
-    }
-    document.getElementById("s-moldura").innerHTML = "Amsterdam" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    molduraTipo1();
+    document.getElementById("s-moldura").innerHTML = "amsterdam" + " ";
+    formulaTotal();
 }
 function buenosAires(){
-    if (material = 1265) {
-        window.moldura = 0;
-    }else{
-        window.moldura = 160;
-    }
+     molduraTipo1();
     document.getElementById("s-moldura").innerHTML = "Buenos Aires" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    formulaTotal();
 }
 function londres(){
-    if (material = 1265) {
-        window.moldura = 0;
-    }else{
-        window.moldura = 160;
-    }
+     molduraTipo1();
     document.getElementById("s-moldura").innerHTML = "Londres" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    formulaTotal();
+
 }
 function santiago(){
-    if (material = 1392) {
-        window.moldura = 345;
-    }else if (material = 1265){
-        window.moldura = 160;    
-    }else{
-        window.moldura = 320;
-    }
+     molduraTipo1();
     document.getElementById("s-moldura").innerHTML = "Santiago" + " ";
-    var preco = (x * y * material/10000) + 40;
-    document.getElementById("s-preco").innerHTML = "R$: " + preco;
+    formulaTotal();
 }
 
 /*function formula(x,y){
@@ -507,9 +496,28 @@ function molduraTipo3(){
             somaMoldura = 480;
         }
 }
-
-
-
+function molduraTipo2(){
+    tipoMoldura = 2;
+    if (precoBase == meta3mm) {
+        somaMoldura = 160;
+    }else if (precoBase == meta4mm) {
+        somaMoldura = 345;
+    }
+    else{
+        somaMoldura = 320;
+    }
+}
+function molduraTipo1(){
+    tipoMoldura = 1;
+    if (precoBase == meta3mm) {
+        somaMoldura = 0;
+    }else if (precoBase == meta4mm) {
+        somaMoldura = 153;
+    }
+    else{
+        somaMoldura = 160;
+    }
+}
 
 
 
