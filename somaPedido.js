@@ -242,7 +242,11 @@ function acm5(){
     formulaTotal();
 }
 
-// papeis mude aqui
+// papeis
+
+function azedo(){
+    alert("azedo");
+}
 
 function papelAlgodao(){
     window.material = 552;
