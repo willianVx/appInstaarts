@@ -17,6 +17,7 @@ include 'conexao.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" src="http://feather.aviary.com/imaging/v3/editor.js"></script>
+  <script src="http://malsup.github.com/jquery.form.js"></script> 
 
 	<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -24,7 +25,6 @@ include 'conexao.php';
 
   <script type="text/javascript" src="bar.js"></script>
   <script type="text/javascript" src="somaPedido.js"></script>
-  <script type="text/javascript" src="definePreco.js"></script>
 </head>
 <body onload="formulaTotal()">
 <script type="text/javascript">
@@ -53,7 +53,7 @@ include 'conexao.php';
 		<div class="col-md-12" id="envelope">
 			<div class="col-md-12">
 			 <div id="canvas">
-			 <img src="img/imagem-1.jpg" id= "imageShow">
+			 <img src="img/imagem-1.jpg" id="imageShow">
 			 </div>
 			</div>
       <section id="up-image">
@@ -70,8 +70,8 @@ include 'conexao.php';
           </div>
         <div class="modal-body">
           <span>Por favor ecolha uma imagem nos formatos: jpg, png ou pdf</span><br><br>
-          <form action="upload.php" method="POST" enctype="multipart/form-data" >
-          <input id="imageShow" type="file" onchange="readURL(this);" name="file" required>  
+          <form id="form1">
+          <input id="file-input" type="file" name="file">  
           <button type="submit" name="submit">Salvar</button> 
           </form>
         </div>
