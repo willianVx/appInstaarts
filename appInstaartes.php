@@ -17,6 +17,7 @@ include 'conexao.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" src="http://feather.aviary.com/imaging/v3/editor.js"></script>
+  <script type="text/javascript" src="jquery.form.js"></script>
 
 	<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -70,8 +71,8 @@ include 'conexao.php';
           </div>
         <div class="modal-body">
           <span>Por favor ecolha uma imagem nos formatos: jpg, png ou pdf</span><br><br>
-          <form action="upload.php" method="POST" enctype="multipart/form-data" >
-          <input id="imageShow" type="file" onchange="readURL(this);" name="file" required>  
+          <form id="formulario" action="upload.php" method="POST" enctype="multipart/form-data" >
+          <input id="imagem" type="file" name="file" required>  
           <button type="submit" name="submit">Salvar</button> 
           </form>
         </div>

@@ -22,7 +22,6 @@
 		$fileNewName = (time()) . $fileName;
 
 		if (in_array($fileActualExt, $allowed)) {
-
 			if ($fileError === 0) {
 				if ($fileSize < 2000000000) {
 						
@@ -38,7 +37,6 @@
 						    echo "Error: " . $sql . "<br>" . $conn->error;
 						}
 						$conn->close();
-						echo "</br> até aqui vai!";
 						header("location: http://localhost/appInsta/appinstaartes.php");
 					}else{
 						echo "Sua imagem é muito grande";
