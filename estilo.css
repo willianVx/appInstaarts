@@ -1,0 +1,19 @@
+#envelope{
+	position: relative;	
+	left: 20%;
+	margin-top: 5%;
+	width: 1080px;
+	height: 650px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #b3b3b3;
+	border-radius: 12px;
+	text-align: center;
+}
+.tamanhoMaterial{
+	margin-top: 2%;
+	text-align: center;
+}
+.somaProdutos{
+	text-align: right;
+}
