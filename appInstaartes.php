@@ -49,6 +49,19 @@ include 'conexao.php';
     }
     var featherEditor = new Aviary.Feather(configObj);
 </script>
+<script type="text/javascript">
+  $('#file-input').change(function() { 
+    // bind 'myForm' and provide a simple callback function 
+    $('#form1').ajaxForm({ 
+        url: 'upload.php',
+        type: 'post',
+        succes: function(data){
+            alert('churros');
+        } 
+    }).submit(); 
+}); 
+
+</script>
 	<div class="row">
 		<div class="col-md-12" id="envelope">
 			<div class="col-md-12">
