@@ -12,7 +12,7 @@
 		$target_dir = "uploads/";
 		$target_file = $target_dir . basename($_FILES["file"]["name"]);
 
-		echo "</br> $fileName, $fileSize, $fileType, $fileError";
+		//echo "</br> $fileName, $fileSize, $fileType, $fileError";
 
 		$fileExt = explode('.', $fileName);
 		$fileActualExt = strtolower(end($fileExt)); 
@@ -26,7 +26,7 @@
 				if ($fileSize < 2000000000) {
 						
 						if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file. $fileNewName)) {
-					    echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
+					    echo "A imagem ". basename( $_FILES["file"]["name"]). " foi salva";
 					    } else {
 					    echo "n";
 					    }
@@ -37,7 +37,7 @@
 						    echo "Error: " . $sql . "<br>" . $conn->error;
 						}
 						$conn->close();
-						header("location: http://localhost/appInsta/appinstaartes.php");
+						//header("location: http://localhost/appInsta/appinstaartes.php");
 					}else{
 						echo "Sua imagem é muito grande";
 					}
@@ -45,7 +45,22 @@
 				echo "Ocorreu algum erro ao fazer o Upload da imagem";
 			}
 		}else{
-			echo "Por favor ecolha uma imagem nos formatos: jpg, png ou tif";
+			echo "Por favor ecolha uma imagem nos formatos: jpg, png ou pdf";
 		}
 	}
  ?>
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Upload</title>
+ 	<script type="text/javascript" src="imageShow.js"></script>
+ 	<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+ </head>
+ <body>
+ 	<form action="upload.php" method="POST" enctype="multipart/form-data" >
+          <input id="file-input" type="file" onchange="readURL(this);" name="file">  
+          <button type="submit" name="submit">Salvar</button> 
+    </form>
+ </body>
+ </html>

@@ -17,19 +17,17 @@ include 'conexao.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" src="http://feather.aviary.com/imaging/v3/editor.js"></script>
-  <script type="text/javascript" src="jquery.form.js"></script>
+  <script src="http://malsup.github.com/jquery.form.js"></script> 
 
-	<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
   <script type="text/javascript" src="bar.js"></script>
   <script type="text/javascript" src="somaPedido.js"></script>
-  <script type="text/javascript" src="definePreco.js"></script>
 </head>
 <body onload="formulaTotal()">
 <script type="text/javascript">
-	var featherEditor = new Aviary.Feather({
+	 var featherEditor = new Aviary.Feather({
         apiKey: '995ec79f58ba414eadd228d643192c39',
         theme: `light`,
         language: `pt_BR`,
@@ -54,7 +52,7 @@ include 'conexao.php';
 		<div class="col-md-12" id="envelope">
 			<div class="col-md-12">
 			 <div id="canvas">
-			 <img src="img/imagem-1.jpg" id= "imageShow">
+			 <img src="img/imagem-1.jpg" id="imageShow">
 			 </div>
 			</div>
       <section id="up-image">
@@ -71,10 +69,7 @@ include 'conexao.php';
           </div>
         <div class="modal-body">
           <span>Por favor ecolha uma imagem nos formatos: jpg, png ou pdf</span><br><br>
-          <form id="formulario" action="upload.php" method="POST" enctype="multipart/form-data" >
-          <input id="imagem" type="file" name="file" required>  
-          <button type="submit" name="submit">Salvar</button> 
-          </form>
+         <iframe src="upload.php" frameborder="0" scrolling="no"></iframe>
         </div>
          <div class="modal-footer">
           <button type="button" type="submit" name="submit" class="btn btn-default" data-dismiss="modal">Ok</button>
