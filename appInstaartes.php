@@ -52,7 +52,7 @@ include 'conexao.php';
 		<div class="col-md-12" id="envelope">
 			<div class="col-md-12">
 			 <div id="canvas">
-			 <img src="img/imagem-1.jpg" id="imageShow">
+			 <img src="img/imagem-1.jpg">
 			 </div>
 			</div>
       <section id="up-image">
@@ -60,16 +60,16 @@ include 'conexao.php';
       </section>
   <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
+      <div class="modal-dialog" >
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content ">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Escolha Sua imagem</h4>
           </div>
-        <div class="modal-body">
+        <div class="modal-body up-image">
           <span>Por favor ecolha uma imagem nos formatos: jpg, png ou pdf</span><br><br>
-         <iframe src="upload.php" frameborder="0" scrolling="no"></iframe>
+         <iframe src="upload.php" frameborder="0" scrolling="no" width="500px" height="400px"></iframe>
         </div>
          <div class="modal-footer">
           <button type="button" type="submit" name="submit" class="btn btn-default" data-dismiss="modal">Ok</button>

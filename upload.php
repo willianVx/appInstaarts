@@ -26,7 +26,7 @@
 				if ($fileSize < 2000000000) {
 						
 						if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file. $fileNewName)) {
-					    echo "A imagem ". basename( $_FILES["file"]["name"]). " foi salva";
+					    echo "A imagem ". basename( $_FILES["file"]["name"]). " foi salva <script>alert(2+2)</script>";
 					    } else {
 					    echo "n";
 					    }
@@ -54,13 +54,35 @@
  <head>
  	<title>Upload</title>
  	<script type="text/javascript" src="imageShow.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="estilo.css">
  	<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
  </head>
  <body>
- 	<form action="upload.php" method="POST" enctype="multipart/form-data" >
-          <input id="file-input" type="file" onchange="readURL(this);" name="file">  
-          <button type="submit" name="submit">Salvar</button> 
+ <div class="col-xs-12">
+ 	<div class="col-xs-6">
+ 	<img src="img/upload-icon.png" id="imageShow" class="well well-sm">
+ 	<span id="status" style="display: none;"><img src="img/loader.gif" alt="Enviando..." />Processando</span>
+ 	</div>
+ 	<div class="col-xs-6">
+ 	<form action="upload.php" method="POST" enctype="multipart/form-data" class="form-group">
+          <input id="imageShow" type="file" onchange="readURL(this)" name="file"> <br>
+          <button type="submit" name="submit" class="btn btn-default">Usar essa imagem</button> 
     </form>
+    </div>
+</div>    
  </body>
  </html>
+
+
+
+
+
+
+
+
+
