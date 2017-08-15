@@ -17,7 +17,7 @@
 		$fileExt = explode('.', $fileName);
 		$fileActualExt = strtolower(end($fileExt)); 
 
-		$allowed = array('jpg', 'jpeg', 'png', 'pdf');
+		$allowed = array('jpg', 'jpeg', 'png', 'bmp');
 
 		$fileNewName = (time()) . $fileName;
 
@@ -45,7 +45,7 @@
 				echo "Ocorreu algum erro ao fazer o Upload da imagem";
 			}
 		}else{
-			echo "Por favor ecolha uma imagem nos formatos: jpg, png ou pdf";
+			echo "Por favor ecolha uma imagem nos formatos: jpg, png ou bmp";
 		}
 	}
  ?>
@@ -55,7 +55,6 @@
  	<title>Upload</title>
  	<script type="text/javascript" src="imageShow.js"></script>
  	<link rel="stylesheet" type="text/css" href="estilo.css">
- 	<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

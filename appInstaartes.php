@@ -17,10 +17,8 @@ include 'conexao.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" src="http://feather.aviary.com/imaging/v3/editor.js"></script>
-  <script src="http://malsup.github.com/jquery.form.js"></script> 
 
 	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
   <script type="text/javascript" src="bar.js"></script>
   <script type="text/javascript" src="somaPedido.js"></script>
@@ -52,7 +50,7 @@ include 'conexao.php';
 		<div class="col-md-12" id="envelope">
 			<div class="col-md-12">
 			 <div id="canvas">
-			 <img src="img/imagem-1.jpg">
+			 <img src="img/imagem-1.jpg" id="imgaeEditavel">
 			 </div>
 			</div>
       <section id="up-image">
@@ -68,7 +66,7 @@ include 'conexao.php';
             <h4 class="modal-title">Escolha Sua imagem</h4>
           </div>
         <div class="modal-body up-image">
-          <span>Por favor ecolha uma imagem nos formatos: jpg, png ou pdf</span><br><br>
+          <span>Por favor ecolha uma imagem nos formatos: jpg, png ou bmp</span><br><br>
          <iframe src="upload.php" frameborder="0" scrolling="no" width="500px" height="400px"></iframe>
         </div>
          <div class="modal-footer">
@@ -79,7 +77,7 @@ include 'conexao.php';
       </div>
 				<p>ou</p>
 				<span><a href="#">Use uma das nossas</a></span>
-				<a href="#" onclick="return launchEditor('imageShow', 'http://localhost/appInsta/img/imagem-1.jpg')" >Editar!</a>
+				<a href="#" onclick="return launchEditor('imgaeEditavel', 'http://localhost/appInsta/img/imagem-1.jpg')">Editar!</a>
 
     <div class="somaProdutos">
       <span id="s-tamanho">40x60cm</span><span id="s-metacrilato">Metacrilato 3mm</span><span id="s-moldura"></span>=<span id="s-preco">Preço</span>
