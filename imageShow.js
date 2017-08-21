@@ -18,9 +18,14 @@ function readURL(input) {
                 $("#status").hide();
             }    
 }
-
-
-
-
-
-
+/*
+var imageName = input.value;
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e){
+            $('#imageEditavel')
+            .attr('src', e.target.result)
+            .width(850);
+        }
+    }
+*/

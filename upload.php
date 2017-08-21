@@ -19,14 +19,13 @@
 
 		$allowed = array('jpg', 'jpeg', 'png', 'bmp');
 
-		$fileNewName = (time()) . $fileName;
+		$fileNewName = md5(date("h:i:sa")).$fileName;
 
 		if (in_array($fileActualExt, $allowed)) {
 			if ($fileError === 0) {
 				if ($fileSize < 2000000000) {
-						
 						if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file. $fileNewName)) {
-					    echo "A imagem ". basename( $_FILES["file"]["name"]). " foi salva <script>alert(2+2)</script>";
+					    echo "A imagem ". basename( $_FILES["file"]["name"]). " foi salva";
 					    } else {
 					    echo "n";
 					    }
@@ -37,6 +36,7 @@
 						    echo "Error: " . $sql . "<br>" . $conn->error;
 						}
 						$conn->close();
+						echo "http://localhost/appInsta/".$target_file.$fileNewName;
 						//header("location: http://localhost/appInsta/appinstaartes.php");
 					}else{
 						echo "Sua imagem é muito grande";
@@ -59,7 +59,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
  </head>
  <body>
  <div class="col-xs-12">
@@ -70,7 +69,7 @@
  	<div class="col-xs-6">
  	<form action="upload.php" method="POST" enctype="multipart/form-data" class="form-group">
           <input id="imageShow" type="file" onchange="readURL(this)" name="file"> <br>
-          <button type="submit" name="submit" class="btn btn-default">Usar essa imagem</button> 
+          <button type="submit" name="submit" class="btn btn-default" id="btnUsarImagem">Usar essa imagem</button> 
     </form>
     </div>
 </div>    

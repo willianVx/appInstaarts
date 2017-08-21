@@ -50,14 +50,14 @@ include 'conexao.php';
 		<div class="col-md-12" id="envelope">
 			<div class="col-md-12">
 			 <div id="canvas">
-			 <img src="img/imagem-1.jpg" id="imgaeEditavel">
+			 <span id="imageEditavel"><img src="img/imagem-1.jpg"></span>
 			 </div>
 			</div>
       <section id="up-image">
-				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Subir Imagem</button>
+				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalSubirImagem">Subir Imagem</button>
       </section>
   <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade" id="modalSubirImagem" role="dialog">
       <div class="modal-dialog" >
         <!-- Modal content-->
         <div class="modal-content ">
@@ -77,7 +77,7 @@ include 'conexao.php';
       </div>
 				<p>ou</p>
 				<span><a href="#">Use uma das nossas</a></span>
-				<a href="#" onclick="return launchEditor('imgaeEditavel', 'http://localhost/appInsta/img/imagem-1.jpg')">Editar!</a>
+				<a href="#" onclick="return launchEditor('imageEditavel', 'http://localhost/appInsta/img/imagem-1.jpg')">Editar!</a>
 
     <div class="somaProdutos">
       <span id="s-tamanho">40x60cm</span><span id="s-metacrilato">Metacrilato 3mm</span><span id="s-moldura"></span>=<span id="s-preco">Preço</span>
