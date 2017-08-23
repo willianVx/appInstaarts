@@ -1,69 +1,51 @@
-<?php 
-include 'conexao.php';
-?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Teste Aplicação Instaartes Final</title>
-	<link rel="stylesheet" type="text/css" href="estilo.css">
-	<script type="text/javascript" src="imageShow.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-	<meta charset="utf-8">
-	
+	<title>CSDK Image Editor - jQuery</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-  <script type="text/javascript" src="bar.js"></script>
-  <script type="text/javascript" src="somaPedido.js"></script>
-  <script type="text/javascript" src="editorAdobe.js"></script>
-  <script type="text/javascript" src="index.js"></script>
-  <script type="text/javascript" src="config.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body onload="formulaTotal()">
+<body class="container" onload="formulaTotal()">
 	<div class="row">
-		<div class="col-md-12" id="envelope">
-			<div class="col-md-12">
-			 <div id="canvas">
-			 <span><img src="img/imagem-1.jpg"></span> 
-			 </div>
+		<div class="col-md-2">
+			<div class="row">
+				<div class="col-md-12">
+					<button id="edit-image-button" class="btn btn-primary btn-block button-panel">
+						<span class="glyphicon glyphicon-pencil pull-left padleft" aria-hidden="true"></span> Editar
+					</button>
+				</div>			
+				<div class="col-md-12">
+					<button id="reset-image-button" class="btn btn-warning btn-block button-panel">
+						<span class="glyphicon glyphicon-repeat pull-left padleft" aria-hidden="true"></span> Voltar
+					</button>
+				</div>
+				<div class="col-md-12">
+					<button id="clear-image-button" class="btn btn-danger btn-block button-panel">
+						<span class="glyphicon glyphicon-remove pull-left padleft" aria-hidden="true"></span> Limpar
+					</button>
+				</div>
 			</div>
-      <section id="up-image">
-				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalSubirImagem">Subir Imagem</button>
-      </section>
-  <!-- Modal -->
-    <div class="modal fade" id="modalSubirImagem" role="dialog">
-      <div class="modal-dialog" >
-        <!-- Modal content-->
-        <div class="modal-content ">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Escolha Sua imagem</h4>
-          </div>
-        <div class="modal-body up-image">
-          <span>Por favor ecolha uma imagem nos formatos: jpg, png ou bmp</span><br><br>
-         <iframe src="upload.php" frameborder="0" scrolling="no" width="500px" height="400px"></iframe>
-        </div>
-         <div class="modal-footer">
-          <button type="button" type="submit" name="submit" class="btn btn-default" data-dismiss="modal">Ok</button>
-        </div>
-        </div>
-      </div>
-      </div>
-				<p>ou</p>
-				<span><a href="#">Use uma das nossas</a></span>
-				<span><a href="">Editar!</a></span>
-
-    <div class="somaProdutos">
+		</div>
+		<div class="col-md-10">
+			<input id="click-upload" type="file">
+			<div id="drop-area" >
+				<span><img src="img/imagem-1.jpg"></span>
+				<p>Click para fazer o Upload da sua imagem</p></span>
+			</div>
+			<img id="editable-image" class="img-responsive">
+		
+	<div class="hud-produtos">	
+	<div class="somaProdutos">
       <span id="s-tamanho">40x60cm</span><span id="s-metacrilato">Metacrilato 3mm</span><span id="s-moldura"></span>=<span id="s-preco">Preço</span>
     </div>  
       <div class="tamanhoMaterial">
           <div class="b_tamanho col-sm-4">
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#tamanho">Tamanho</button>
+                <button type="button" class="btn btn-default btn-lg hud-botao" data-toggle="modal" data-target="#tamanho">Tamanho</button>
                 <!-- Modal -->
                 <div class="modal fade" id="tamanho" role="dialog">
                   <div class="modal-dialog">
@@ -128,7 +110,7 @@ include 'conexao.php';
               <!-- tamanho material e moldura -->
           <div class="container m_material col-sm-4">
               <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#material">Acabamento</button>
+                <button type="button" class="btn btn-default btn-lg hud-botao" data-toggle="modal" data-target="#material">Acabamento</button>
 
                 <!-- Modal -->
                 <div class="modal fade" id="material" role="dialog">
@@ -182,8 +164,8 @@ include 'conexao.php';
           </div>
           <div class="moldura col-sm-4">
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#moldura">Moldura</button>
-
+  <button type="button" class="btn btn-default btn-lg hud-botao" data-toggle="modal" data-target="#moldura">Moldura</button>
+  <button type="button" class="btn btn-success btn-lg hud-botao b-comprar">Comprar</button>
   <!-- Modal -->
   <div class="modal fade" id="moldura" role="dialog">
     <div class="modal-dialog">
@@ -235,13 +217,17 @@ include 'conexao.php';
           <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
         </div>
       </div>
-      
+      </div>	
     </div>
   </div>
-  
 </div>
-    </div>  
-</div>
-</div>
+    </div> 
+  </div>
+	</div> <!-- end .row -->
+	<script type="text/javascript" src="https://dme0ih8comzn4.cloudfront.net/imaging/v3/editor.js"></script>
+	<script type="text/javascript" src="config.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="bar.js"></script>
+	<script type="text/javascript" src="calculaPreco.js"></script>
 </body>
 </html>
