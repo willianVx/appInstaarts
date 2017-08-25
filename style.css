@@ -1,0 +1,46 @@
+
+.padleft {
+	padding: 0px 0px 0px 20px;
+}
+
+.button-panel {
+	margin-bottom: 10px;
+	border-radius: 0;
+}
+
+#drop-area {
+	border-style: solid;
+	border-width: 1px; 
+	border-color: #b3b3b3;
+	border-radius: 12px; 
+	text-align: center;
+	color: lightgray;
+	font-size: 24px;
+}
+
+#click-upload {
+  display: none;
+}
+.hud-botao{
+	position: relative;
+	top: 10px;
+}
+.b-comprar{
+	position: relative;
+	left: 30%;
+}
+.hud-calcularPreco{
+	position: relative;
+	padding: 1%;
+}
+.somaProdutos{
+	position: relative;
+	width: 40%;
+	left: 50%;
+	top: 10px;
+	bottom:20px;
+}
+.ok-modal-tamanho{
+	position: relative;
+	top: 55px;
+}
