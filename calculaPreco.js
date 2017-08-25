@@ -290,9 +290,7 @@ function canvas(){
     document.getElementById("s-metacrilato").innerHTML = "canvas" + " ";
     formulaTotal();
 }
-
 //Impressão UV 
-
 function uvPs(){
     if (tipoMoldura == 3) {
         if (somaMoldura != 0){

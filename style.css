@@ -29,3 +29,18 @@
 	position: relative;
 	left: 30%;
 }
+.hud-calcularPreco{
+	position: relative;
+	padding: 1%;
+}
+.somaProdutos{
+	position: relative;
+	width: 40%;
+	left: 50%;
+	top: 10px;
+	bottom:20px;
+}
+.ok-modal-tamanho{
+	position: relative;
+	top: 55px;
+}

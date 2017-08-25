@@ -3,41 +3,43 @@ $(document).ready(function(){
 		$("#tUv").hide();
 		$("#m-contemporanea").hide();
 		$("#m-moderna").hide();
-
 		$("#bMeta").click(function(){
-        $("#tMeta").show();
-
         $("#tPapel").hide();
 		$("#tUv").hide();
+        $("#tMeta").fadeIn();
     });
 		$("#bPrints").click(function(){
-        $("#tPapel").show();
-
         $("#tMeta").hide();
 		$("#tUv").hide();
+        $("#tPapel").fadeIn();
     });
 		$("#bUv").click(function(){
-        $("#tUv").show();
-
         $("#tPapel").hide();
 		$("#tMeta").hide();
+        $("#tUv").fadeIn();
     });
 		$("#b-classica").click(function(){
-        $("#m-classica").show();
-
-        $("#m-contemporanea").hide();
+		$("#m-contemporanea").hide();
 		$("#m-moderna").hide();
+        $("#m-classica").fadeIn();
     });
 		$("#b-contemporanea").click(function(){
-        $("#m-contemporanea").show();
-
         $("#m-classica").hide();
 		$("#m-moderna").hide();
+        $("#m-contemporanea").fadeIn();
     });
 		$("#b-moderna").click(function(){
-        $("#m-moderna").show();
-
-        $("#m-classica").hide();
+		$("#m-classica").hide();
 		$("#m-contemporanea").hide();
+        $("#m-moderna").fadeIn();
     });
+		$("#tamanhoPersonalizado").hide();
+		$("#b-tamanhoPersonalizado").click(function(){
+			$("#tamanhoPadrao").hide();
+			$("#tamanhoPersonalizado").fadeIn();
+		});
+		$("#b-tamanhoPadrao").click(function(){
+			$("#tamanhoPersonalizado").hide();
+			$("#tamanhoPadrao").fadeIn();
+		});
 });
