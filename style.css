@@ -60,3 +60,9 @@
 	border-style: solid;
 	border-color: green;
 }
+.img-upload{
+	position: relative;
+	max-width: 800px;
+	max-height: 400px;
+	left: 200px;
+}

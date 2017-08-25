@@ -22,8 +22,6 @@ $(document).ready(function() {
 			console.log(errorObj.code);
 			console.log(errorObj.message);
 			console.log(errorObj.args);
-			alert(errorObj.message);
-			alert(errorObj.code);
 		}
 	});
 	// Edit
@@ -79,17 +77,13 @@ $(document).ready(function() {
 
 		// Get the dropped file
 		var file = e.originalEvent.dataTransfer.files[0];
-
 		validateFileType(file);
-
 	});
 
 	// Click
 	//// Takes file from file chooser
 	$('#click-upload').on('change', function(e){
-
 		var file = e.originalEvent.target.files[0];
-
 		validateFileType(file);
 
 	});
@@ -117,7 +111,7 @@ $(document).ready(function() {
 		if (fileIsSupported(file)) {
 			setImage(file);
 			toggleDragDrop();
-			launchImageEditor();
+			//launchImageEditor();
 			return true;
 		}
 		else {
