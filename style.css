@@ -45,3 +45,10 @@
 	left: 540px;
 	bottom: 5px;
 }
+.thumbnail{
+	font-size: 10px;
+}
+.t-thumb{
+	position: relative;
+	width: 120px;
+}
