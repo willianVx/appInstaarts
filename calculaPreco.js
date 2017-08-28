@@ -472,6 +472,11 @@ function molduraTipo1(){
         somaMoldura = 160;
     }
 }
+function semMoldura(){
+        window.somaMoldura = 0;
+        formulaTotal();
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+}
 
 
 

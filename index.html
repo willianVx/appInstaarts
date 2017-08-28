@@ -34,16 +34,16 @@
 			<input id="click-upload" type="file">
 			<div id="drop-area" >
 				<span><img src="img/imagem-1.jpg"></span>
-				<p>Click para fazer o Upload da sua imagem</p></span>
+				<p>Click ou arraste para fazer o Upload da sua imagem</p></span>
 			</div>
 			<img id="editable-image" class="img-responsive img-upload">
 	<div class="hud-produtos">	
-	<div class="somaProdutos well well-sm">
+	 <div class="somaProdutos well well-sm">
       <span id="s-tamanho" class="hud-calcularPreco">40x60cm </span><span class="badge">+</span>
       <span id="s-metacrilato" class="hud-calcularPreco">Metacrilato 3mm </span>
-      <span id="s-moldura" class="hud-calcularPreco badge"></span></span>
-      <span id="s-preco" class="hud-calcularPreco preco-pradireita">Preço</span>
+      <span id="s-moldura" class="hud-calcularPreco badge">Esolha sua moldura</span>
     </div>  
+      <span id="s-preco" class="hud-calcularPreco preco-pradireita">Preço</span>
       <div class="tamanhoMaterial">
           <div class="b_tamanho col-sm-4">
                 <!-- Trigger the modal with a button -->
@@ -299,55 +299,14 @@
                 <div class="container-fluid">
                   <div class="navbar-header"></div>
                   <ul class="nav navbar-nav">
-                    <li id="b-classica"><a href="#">Classica</a></li>
                     <li id="b-contemporanea"><a href="#">Contemporanea</a></li>
                     <li id="b-moderna"><a href="#">Moderna</a></li>
+                    <li id="b-classica"><a href="#">Classica</a></li>
                   </ul>
                 </div>
               </nav>
                     <div id="bMoldura">
-                      <div id="m-classica">
-                                <div class="col-md-4 t-thumb" onclick="florenca()">
-                                  <div class="thumbnail" id="florenca-select-color">
-                                    <label><img src="img/florenca.png">
-                                      <div>
-                                      <p>Florença</p>
-                                      </div>
-                                    </label>
-                                  </div>
-                                </div>
-                                
-                                <div class="col-md-4 t-thumb" onclick="instambul()">
-                                  <div class="thumbnail" id="istambul-select-color">
-                                    <label><img src="img/istambul.png">
-                                      <div>
-                                      <p>Istambul</p>
-                                      </div>
-                                    </label>
-                                  </div>
-                                </div>
-
-                                <div class="col-md-4 t-thumb" onclick="paris()">
-                                  <div class="thumbnail" id="paris-select-color">
-                                    <label><img src="img/paris.png">
-                                      <div>
-                                      <p>Paris</p>
-                                      </div>
-                                    </label>
-                                  </div>
-                                </div>
-
-                                <div class="col-md-4 t-thumb" onclick="roma()">
-                                  <div class="thumbnail" id="roma-select-color">
-                                    <label><img src="img/roma.png">
-                                      <div>
-                                      <p>Roma</p>
-                                      </div>
-                                    </label>
-                                  </div>
-                                </div>
-
-                      </div>
+                      
                       <div id="m-contemporanea">
                                 <div class="col-md-4 t-thumb" onclick="atenas()">
                                   <div class="thumbnail" id="atenas-select-color">
@@ -462,11 +421,54 @@
                                   </div>
                                 </div>
                       </div>
+
+                      <div id="m-classica">
+                                <div class="col-md-4 t-thumb" onclick="florenca()">
+                                  <div class="thumbnail" id="florenca-select-color">
+                                    <label><img src="img/florenca.png">
+                                      <div>
+                                      <p>Florença</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+                                
+                                <div class="col-md-4 t-thumb" onclick="instambul()">
+                                  <div class="thumbnail" id="istambul-select-color">
+                                    <label><img src="img/istambul.png">
+                                      <div>
+                                      <p>Istambul</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 t-thumb" onclick="paris()">
+                                  <div class="thumbnail" id="paris-select-color">
+                                    <label><img src="img/paris.png">
+                                      <div>
+                                      <p>Paris</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 t-thumb" onclick="roma()">
+                                  <div class="thumbnail" id="roma-select-color">
+                                    <label><img src="img/roma.png">
+                                      <div>
+                                      <p>Roma</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                      </div>
                     </div>
                     </div>
         </div>
         <div class="modal-footer">
-          <span><input type="radio" name="semMoldura">Sem Moldura</span>
+          <span onclick="semMoldura()" class="btn btn-default">Sem Moldura</span>
           <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
         </div>
       </div>

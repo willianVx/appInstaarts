@@ -1,7 +1,7 @@
 $(document).ready(function(){
 		$("#tPapel").hide();
 		$("#tUv").hide();
-		$("#m-contemporanea").hide();
+		$("#m-classica").hide();
 		$("#m-moderna").hide();
 		$("#bMeta").click(function(){
         $("#tPapel").hide();
