@@ -35,12 +35,35 @@
 }
 .somaProdutos{
 	position: relative;
-	width: 40%;
-	left: 50%;
+	text-align: center;
+	width: 55%;
+	left: 35%;
 	top: 10px;
 	bottom:20px;
 }
 .ok-modal-tamanho{
 	position: relative;
-	top: 55px;
+	left: 540px;
+	bottom: 5px;
+}
+.thumbnail{
+	font-size: 10px;
+}
+.t-thumb{
+	position: relative;
+	width: 120px;
+}
+.m-thumb{
+	position: relative;
+	width: 150px;
+}
+.green{
+	border-style: solid;
+	border-color: green;
+}
+.img-upload{
+	position: relative;
+	max-width: 1000px;
+	max-height: 800px;
+	
 }

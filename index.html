@@ -34,16 +34,17 @@
 			<input id="click-upload" type="file">
 			<div id="drop-area" >
 				<span><img src="img/imagem-1.jpg"></span>
-				<p>Click para fazer o Upload da sua imagem</p></span>
+				<p>Click ou arraste para fazer o Upload da sua imagem</p></span>
 			</div>
-			<img id="editable-image" class="img-responsive">
+			<img id="editable-image" class="img-responsive img-upload">
 	<div class="hud-produtos">	
-	<div class="somaProdutos well well-sm">
+	  <div class="somaProdutos well well-sm">
       <span id="s-tamanho" class="hud-calcularPreco">40x60cm </span><span class="badge">+</span>
       <span id="s-metacrilato" class="hud-calcularPreco">Metacrilato 3mm </span>
-      <span id="s-moldura" class="hud-calcularPreco badge"></span></span>
-      <span id="s-preco" class="hud-calcularPreco preco-pradireita">Preço</span>
+      <span id="s-moldura" class="hud-calcularPreco badge">Esolha sua moldura</span>
+      <span id="s-preco">Preço</span>
     </div>  
+      
       <div class="tamanhoMaterial">
           <div class="b_tamanho col-sm-4">
                 <!-- Trigger the modal with a button -->
@@ -92,7 +93,7 @@
                             <label onclick="T30x45()"><input type="radio" name="tamanho" value="30x45"> 30x45</label><br>
                             <label onclick="T40x60()"><input type="radio" name="tamanho" value="40x60"> 40x60</label><br>
                             </div>
-                             <button type="button" class="btn btn-default ok-modal-tamanho" data-dismiss="modal">OK</button>
+                             
                           </form> 
                         </div>
                           </div>
@@ -111,6 +112,7 @@
                                     </form>
                                   </div>  
                           <div class="modal-footer"></div>
+                            <button type="button" class="btn btn-default ok-modal-tamanho" data-dismiss="modal">OK</button>
                         </div>
                       </div>
                     </div>
@@ -130,7 +132,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Acabamento</h4>
                       </div>
-                      <div class="modal-body">
+                      <div class="modal-body col-sm-12">
                                       <div class="checkbox">
                                         <nav class="navbar navbar-inverse">
                               <div class="container-fluid">
@@ -143,28 +145,137 @@
                               </div>
                             </nav>
                             <div id="tMeta">
-                              <label onclick="meta7()"><ul class="bnt btn-default">META 7mm</ul></label>
-                              <label onclick="meta5()"><ul class="bnt btn-default">META 5mm</ul></label>
-                              <label onclick="meta4()"><ul class="bnt btn-default" >META 4mm</ul></label>
-                              <label onclick="meta3()"><ul class="bnt btn-default">META 3mm</ul></label>
-                              <label onclick="photob()"><ul class="bnt btn-default">Photobloco</ul></label>
-                              <label onclick="acm5()"><ul class="bnt btn-default">ACM 5mm</ul></label>
+                              <div class="col-sm-3 m-thumb" onclick="meta7()">
+                                <div class="thumbnail" id="meta7-select-color">
+                                  <label><img src="img/meta7mm.png">
+                                    <div>
+                                      <p>Metacrilato 7mm</p>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-sm-3 m-thumb"  onclick="meta5()">
+                                <div class="thumbnail" id="meta5-select-color">
+                                  <label><img src="img/meta5mm.png">
+                                    <div>
+                                      <p>Metacrilato 5mm</p>
+                                    </div>
+                                  </label>
+                                 </div>
+                              </div>
+
+                              <div class="col-sm-3 m-thumb" onclick="meta4()">
+                                <div class="thumbnail" id="meta4-select-color">
+                                  <label><img src="img/meta4mm.png">
+                                    <div>
+                                      <p>Metacrilato 4mm PS</p>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+
+                              <div class="col-sm-3 m-thumb" onclick="meta3()">
+                                <div class="thumbnail" id="meta3-select-color">
+                                  <label><img src="img/meta3mm.png">
+                                    <div>
+                                      <p>Metacrilato 3mm Decor Cristal</p>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+
+                              <div class="col-sm-3 m-thumb" onclick="acm5()">
+                                <div class="thumbnail" id="acm-select-color">
+                                  <label><img src="img/acm.png">
+                                    <div>
+                                      <p>Metacrilato ACM 5mm</p>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+
                             </div>
+
                             <div id="tPapel">
-                            <label onclick="papelAlgodao()"><ul class="bnt btn-default">Papel algodão</ul></label>
-                            <label onclick="acetinato()"><ul class="bnt btn-default">Acetinato</ul></label>
-                            <label onclick="brilhante()"><ul class="bnt btn-default">Brilhante</ul></label>
-                            <label onclick="fosco()"><ul class="bnt btn-default">Fosco</ul></label>
-                            <label onclick="canvas()"><ul class="bnt btn-default">Canvas</ul></label>
+
+                              <div class="col-sm-3 m-thumb" onclick="papelAlgodao()">
+                                <div class="thumbnail" id="algodao-select-color">
+                                  <label><img src="img/algodao.png">
+                                    <div>
+                                      <p>Papel algodão</p>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+
+                            <div class="col-sm-3 m-thumb" onclick="acetinato()">
+                                <div class="thumbnail" id="acetinato-select-color">
+                                  <label><img src="img/acetinato.png">
+                                    <div>
+                                      <p>Papel Acetinato</p>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+
+                             <div class="col-sm-3 m-thumb" onclick="brilhante()">
+                                <div class="thumbnail" id="brilhante-select-color">
+                                  <label><img src="img/brilhante.png">
+                                    <div>
+                                      <p>Papel Brilhante</p>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+                              
+                              <div class="col-sm-3 m-thumb" onclick="fosco()">
+                                <div class="thumbnail" id="fosco-select-color">
+                                  <label><img src="img/fosco.png">
+                                    <div>
+                                      <p>Papel Fosco</p>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+                            <div class="col-sm-3 m-thumb" onclick="canvas()">
+                                <div class="thumbnail" id="canvas-select-color">
+                                  <label><img src="img/canvas.png">
+                                    <div>
+                                      <p>Impressão em Canvas</p>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+
                             </div>
+
                             <div id="tUv">
-                            <label onclick="uvPs()"><ul class="bnt btn-default">UV Sobre PS</ul></label>
-                            <label onclick="uvAcm()"><ul class="bnt btn-default">UV Sobre ACM</ul></label>
+
+                            <div class="col-sm-3 m-thumb" onclick="uvPs()">
+                                <div class="thumbnail" id="uv-select-color">
+                                  <label><img src="img/uvps.png">
+                                    <div>
+                                      <p>impressão UV sobre PS</p>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+
+                              <div class="col-sm-3 m-thumb" onclick="uvAcm()">
+                                <div class="thumbnail" id="uvacm-select-color">
+                                  <label><img src="img/uvacm.png">
+                                    <div>
+                                      <p>impressão UV sobre ACM</p>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+                              
                             </div>
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                        <button type="button" class="btn btn-default ok-modal-acabamento" data-dismiss="modal">Ok</button>
                       </div>
                     </div>
                   </div>
@@ -183,45 +294,182 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Moldura</h4>
         </div>
-        <div class="modal-body">
+        <div class="modal-body col-sm-12">
                         <div class="checkbox">
                         <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                   <div class="navbar-header"></div>
                   <ul class="nav navbar-nav">
-                    <li id="b-classica"><a href="#">Classica</a></li>
                     <li id="b-contemporanea"><a href="#">Contemporanea</a></li>
                     <li id="b-moderna"><a href="#">Moderna</a></li>
+                    <li id="b-classica"><a href="#">Classica</a></li>
                   </ul>
                 </div>
               </nav>
                     <div id="bMoldura">
-                      <div id="m-classica">
-                       <label onclick="florenca()"><ul>Florença</ul></label>
-                       <label onclick="instambul()"><ul>Istambul</ul></label>
-                       <label onclick="paris()"><ul>Paris</ul></label>
-                       <label onclick="roma()"><ul>Roma</ul></label>
-                      </div>
+                      
                       <div id="m-contemporanea">
-                       <label onclick="atenas()"><ul>Atenas</ul></label>
-                       <label onclick="basel()"><ul>Basel</ul></label>
-                       <label onclick="berlim()"><ul>Berlim</ul></label>
-                       <label onclick="miami()"><ul>Miami</ul></label>
-                       <label onclick="novaYork()"><ul>Nova York</ul></label>
-                       <label onclick="saoPaulo()"><ul>São Paulo</ul></label>
+                                <div class="col-md-4 t-thumb" onclick="atenas()">
+                                  <div class="thumbnail" id="atenas-select-color">
+                                    <label><img src="img/atenas.png">
+                                      <div>
+                                      <p>Atenas</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 t-thumb" onclick="basel()">
+                                  <div class="thumbnail" id="basel-select-color">
+                                    <label><img src="img/basel.png">
+                                      <div>
+                                      <p>Basel</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 t-thumb" onclick="berlim()">
+                                  <div class="thumbnail" id="berlim-select-color">
+                                    <label><img src="img/berlim.png">
+                                      <div>
+                                      <p>Berlim</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 t-thumb" onclick="miami()">
+                                  <div class="thumbnail" id="miami-select-color">
+                                    <label><img src="img/miami.png">
+                                      <div>
+                                      <p>Miami</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                 <div class="col-md-4 t-thumb" onclick="novaYork()">
+                                  <div class="thumbnail" id="novayork-select-color">
+                                    <label><img src="img/novayork.png">
+                                      <div>
+                                      <p>Nova York</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+                                
+                                <div class="col-md-4 t-thumb" onclick="saoPaulo()">
+                                  <div class="thumbnail" id="saopaulo-select-color">
+                                    <label><img src="img/saopaulo.png">
+                                      <div>
+                                      <p>São Paulo</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+                       
                       </div>
                       <div id="m-moderna">
-                       <label onclick="amazonas()"><ul>Amazonas</ul></label>
-                       <label onclick="amsterdam()"><ul>Amsterdam</ul></label>
-                       <label onclick="buenosAires()"><ul>Buenos Aires</ul></label>
-                       <label onclick="londres()"><ul>Londres</ul></label>
-                       <label onclick="santiago()"><ul>Santiago</ul></label>
+
+                                <div class="col-md-4 t-thumb" onclick="amazonas()">
+                                  <div class="thumbnail" id="amazonas-select-color">
+                                    <label><img src="img/amazonas.png">
+                                      <div>
+                                      <p>Amazonas</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 t-thumb" onclick="amsterdam()">
+                                  <div class="thumbnail" id="amsterdam-select-color">
+                                    <label><img src="img/amsterdam.png">
+                                      <div>
+                                      <p>Amsterdam</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 t-thumb" onclick="buenosAires()">
+                                  <div class="thumbnail" id="buenosaires-select-color">
+                                    <label><img src="img/buenosaires.png">
+                                      <div>
+                                      <p>Buenos Aires</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 t-thumb" onclick="londres()">
+                                  <div class="thumbnail" id="londres-select-color">
+                                    <label><img src="img/londres.png">
+                                      <div>
+                                      <p>Londres</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 t-thumb" onclick="santiago()">
+                                  <div class="thumbnail" id="santiago-select-color">
+                                    <label><img src="img/santiago.png">
+                                      <div>
+                                      <p>Santiago</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+                      </div>
+
+                      <div id="m-classica">
+                                <div class="col-md-4 t-thumb" onclick="florenca()">
+                                  <div class="thumbnail" id="florenca-select-color">
+                                    <label><img src="img/florenca.png">
+                                      <div>
+                                      <p>Florença</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+                                
+                                <div class="col-md-4 t-thumb" onclick="instambul()">
+                                  <div class="thumbnail" id="istambul-select-color">
+                                    <label><img src="img/istambul.png">
+                                      <div>
+                                      <p>Istambul</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 t-thumb" onclick="paris()">
+                                  <div class="thumbnail" id="paris-select-color">
+                                    <label><img src="img/paris.png">
+                                      <div>
+                                      <p>Paris</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 t-thumb" onclick="roma()">
+                                  <div class="thumbnail" id="roma-select-color">
+                                    <label><img src="img/roma.png">
+                                      <div>
+                                      <p>Roma</p>
+                                      </div>
+                                    </label>
+                                  </div>
+                                </div>
+
                       </div>
                     </div>
                     </div>
         </div>
         <div class="modal-footer">
-          <span><input type="radio" name="semMoldura">Sem Moldura</span>
+          <span onclick="semMoldura()" class="btn btn-default">Sem Moldura</span>
           <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
         </div>
       </div>
