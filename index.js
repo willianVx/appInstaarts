@@ -128,13 +128,15 @@ $(document).ready(function() {
 		}
 		// Get the image to be edited
 		// `[0]` gets the image itself, not the jQuery object
-		currentImage = $('#editable-image')[0];
 
+		currentImage = $('#editable-image')[0];
 		csdkImageEditor.launch({
 			image: currentImage.id,
 			//url: currentImage.src
 		});
+
 	}
+
 	/*function downloadImage() {
 		var url = currentImage ? currentImage.src : originalImageSrc;
 		var link = document.createElement("a");

@@ -35,8 +35,9 @@
 }
 .somaProdutos{
 	position: relative;
-	width: 37%;
-	left: 50%;
+	text-align: center;
+	width: 55%;
+	left: 35%;
 	top: 10px;
 	bottom:20px;
 }
@@ -62,7 +63,7 @@
 }
 .img-upload{
 	position: relative;
-	max-width: 800px;
-	max-height: 400px;
-	left: 200px;
+	max-width: 1000px;
+	max-height: 800px;
+	
 }
