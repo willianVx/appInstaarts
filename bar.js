@@ -150,7 +150,6 @@ $(document).ready(function(){
 			removerClasse()
 			$("#santiago-select-color").addClass("green");
 		});
-
 		function removerClasse(){
 			$("#meta7-select-color").removeClass("green");
 			$("#meta5-select-color").removeClass("green");
