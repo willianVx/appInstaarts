@@ -378,7 +378,7 @@ function paris(){
 }
 
 function roma(){
-     molduraTipo1();
+    molduraTipo1();
     document.getElementById("s-moldura").innerHTML = "Roma" + " ";
     formulaTotal();
 
@@ -387,10 +387,14 @@ function roma(){
 //contemporanea
 
 function atenas(){
-     molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "Atenas" + " ";
+    molduraTipo1();
+    //window.nome_moldura = " sem moldura ";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_canvas || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Atenas" + " ";
+    }
     formulaTotal();
-  
 }
 function basel(){
      molduraTipo2();
@@ -460,7 +464,7 @@ function molduraTipo3(){
     tipoMoldura = 3;
     if (precoBase == meta3mm) {
     somaMoldura = 320;
-    }else if (precoBase == meta4mm) {
+    }else if (precoBase == meta4mm){
     somaMoldura = 506;
     }
     else{
@@ -482,7 +486,6 @@ function molduraTipo1(){
     tipoMoldura = 1;
     if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_canvas || precoBase == papel_brilhante || precoBase == papel_acetinato) {
         alert("Não é possível escolher moldura para esse acabamento");
-        window.nome_moldura = " sem moldura ";
     }
     else if (precoBase == meta3mm) {
         somaMoldura = 0;
