@@ -360,26 +360,42 @@ function uvAcm(){
 
 function florenca(){
     molduraTipo3();
-    document.getElementById("s-moldura").innerHTML = "Florença" + " ";
+      if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Florença" + " ";
+    }
     formulaTotal();
 }
 
 
 function instambul(){
     molduraTipo3();
-    document.getElementById("s-moldura").innerHTML = "Istambul" + " ";
+      if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Istanbul" + " ";
+    }
     formulaTotal();
 }
 
 function paris(){ 
     molduraTipo3();
-    document.getElementById("s-moldura").innerHTML = "Paris" + " ";
+      if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Paris" + " ";
+    }
     formulaTotal();
 }
 
 function roma(){
     molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "Roma" + " ";
+      if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Roma" + " ";
+    }
     formulaTotal();
 
 }
@@ -388,8 +404,7 @@ function roma(){
 
 function atenas(){
     molduraTipo1();
-    //window.nome_moldura = " sem moldura ";
-    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_canvas || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
         document.getElementById("s-moldura").innerHTML = "Sem Moldura";
     }else{
         document.getElementById("s-moldura").innerHTML = "Atenas" + " ";
@@ -398,30 +413,48 @@ function atenas(){
 }
 function basel(){
      molduraTipo2();
-    document.getElementById("s-moldura").innerHTML = "Basel" + " ";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Basel" + " ";
+    }
     formulaTotal();
 }
 function berlim(){
     molduraTipo3();
-    document.getElementById("s-moldura").innerHTML = "Berlim" + " ";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Berlim" + " ";
+    }
     formulaTotal();
 }
 function miami(){
-    window.nome_moldura = "miami";
     molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = nome_moldura + " ";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Miami" + " ";
+    }
     formulaTotal();
  
 }
 function novaYork(){
     molduraTipo2();
-    document.getElementById("s-moldura").innerHTML = "New York" + " ";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Nova York" + " ";
+    }
     formulaTotal();
-
 }
 function saoPaulo(){
     molduraTipo2();
-    document.getElementById("s-moldura").innerHTML = "São Paulo" + " ";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "São Pulo" + " ";
+    }
     formulaTotal();
 }
 
@@ -429,28 +462,48 @@ function saoPaulo(){
 
 function amazonas(){
     molduraTipo2();
-    document.getElementById("s-moldura").innerHTML = "Amazonas" + " ";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Amazonas" + " ";
+    }
     formulaTotal();
 }
 function amsterdam(){
     molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "amsterdam" + " ";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Amsterdam" + " ";
+    }
     formulaTotal();
 }
 function buenosAires(){
      molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "Buenos Aires" + " ";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Buenos Aires" + " ";
+    }
     formulaTotal();
 }
 function londres(){
      molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "Londres" + " ";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Londres" + " ";
+    }
     formulaTotal();
 
 }
 function santiago(){
-     molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "Santiago" + " ";
+    molduraTipo1();
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Santiago" + " ";
+    }
     formulaTotal();
 }
 function formulaTotal(){
@@ -462,7 +515,10 @@ function formulaTotal(){
     }
 function molduraTipo3(){
     tipoMoldura = 3;
-    if (precoBase == meta3mm) {
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        alert("Não é possível escolher moldura para esse acabamento");
+    }
+    else if (precoBase == meta3mm) {
     somaMoldura = 320;
     }else if (precoBase == meta4mm){
     somaMoldura = 506;
@@ -473,7 +529,10 @@ function molduraTipo3(){
 }
 function molduraTipo2(){
     tipoMoldura = 2;
-    if (precoBase == meta3mm) {
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        alert("Não é possível escolher moldura para esse acabamento");
+    }
+    else if (precoBase == meta3mm) {
         somaMoldura = 160;
     }else if (precoBase == meta4mm) {
         somaMoldura = 345;
@@ -484,7 +543,7 @@ function molduraTipo2(){
 }
 function molduraTipo1(){
     tipoMoldura = 1;
-    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_canvas || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
         alert("Não é possível escolher moldura para esse acabamento");
     }
     else if (precoBase == meta3mm) {
