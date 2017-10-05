@@ -71,7 +71,6 @@ $(document).ready(function() {
 
 		// Click anywhere in Droparea to upload file
 	  $('#click-upload').click();
-
 	})
 	.on('drop', function(e) {
 
