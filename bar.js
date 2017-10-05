@@ -179,4 +179,30 @@ $(document).ready(function(){
 			$("#londres-select-color").removeClass("green");
 			$("#santiago-select-color").removeClass("green");
 		}
+
+		//upload (save) and style drag and drop zone
+		(function(){
+			var dropzone = document.getElementById('drop-area');
+
+			var upload = function(files){
+				var formData = new FormData(),
+					xhr = new XMLHttpRequest(),
+					x;
+			}
+
+			dropzone.ondrop = function(e){
+				e.preventDefault();
+				this.className = 'drop-zone';
+				upload(e.dataTransfer.files);
+			};
+
+			dropzone.ondragover = function(){
+				this.className = 'drop-zone dragover';
+				return false;
+			};
+			dropzone.ondragleave = function(){
+				this.className = 'drop-zone';
+				return false;
+			};
+		}());
 });

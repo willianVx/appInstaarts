@@ -8,7 +8,7 @@
 	border-radius: 0;
 }
 
-#drop-area {
+.drop-zone{
 	border-style: solid;
 	border-width: 1px; 
 	border-color: #b3b3b3;
@@ -17,7 +17,9 @@
 	color: lightgray;
 	font-size: 24px;
 }
-
+.drop-zone.dragover{
+	opacity: 0.5;
+}
 #click-upload {
   display: none;
 }

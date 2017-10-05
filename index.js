@@ -85,7 +85,6 @@ $(document).ready(function() {
 	$('#click-upload').on('change', function(e){
 		var file = e.originalEvent.target.files[0];
 		validateFileType(file);
-
 	});
 	// Checks if the file type is in the array of supported types
 	function fileIsSupported(file) {
@@ -136,7 +135,6 @@ $(document).ready(function() {
 		});
 
 	}
-
 	/*function downloadImage() {
 		var url = currentImage ? currentImage.src : originalImageSrc;
 		var link = document.createElement("a");
