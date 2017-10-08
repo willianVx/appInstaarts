@@ -86,7 +86,7 @@ $(document).ready(function() {
 		validateFileType(file);
 	});
 	// Checks if the file type is in the array of supported types
-	function fileIsSupported(file) {
+	function fileIsSupported(file){
 		var supportedFileTypes = ['image/jpeg', 'image/png'];
 		return supportedFileTypes.indexOf(file.type) >= 0 ? true : false;
 	}
@@ -117,7 +117,6 @@ $(document).ready(function() {
 			return false;
 		}
 	}
-
 	function launchImageEditor() {
 
 		if (!originalImageSrc) {
@@ -146,4 +145,38 @@ $(document).ready(function() {
 		link.download = 'my-pic';
 		link.click();
 	}*/
+	//upload (save) and style drag and drop zone
+			(function uploadAndSave(){
+				var dropzone = document.getElementById('drop-area');
+				var totalarea = document.getElementById('click-upload');
+				var upload = function(files){
+					var formData = new FormData(),
+						xhr = new XMLHttpRequest(),
+						x;
+				for(x=0; x<files.length; x = x + 1){
+					formData.append('file[]', files[x]);
+				}	
+				xhr.onload = function(){
+					var data = this.responseText;
+				}
+				xhr.open('post', 'upload.php');
+				xhr.send(formData);
+				}
+				totalarea.onchange = function(e){
+					console.log(e);
+				}
+				dropzone.ondrop = function(e){
+					e.preventDefault();
+					this.className = 'drop-zone';
+					upload(e.dataTransfer.files);
+				};
+				dropzone.ondragover = function(){
+					this.className = 'drop-zone dragover';
+					return false;
+				};
+				dropzone.ondragleave = function(){
+					this.className = 'drop-zone';
+					return false;
+				};
+			}());
 });
