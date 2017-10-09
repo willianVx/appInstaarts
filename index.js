@@ -24,6 +24,40 @@ $(document).ready(function() {
 			console.log(errorObj.args);
 		}
 	});
+	//upload (save) and style drag and drop zone
+			(uploadAndSave = function(){
+				var dropzone = document.getElementById('drop-area');
+				var upload = function(files){
+					var formData = new FormData(),
+						xhr = new XMLHttpRequest(),
+						x;
+				for(x=0; x<files.length; x = x + 1){
+					formData.append('file[]', files[x]);
+				}	
+				xhr.onload = function(){
+					var data = this.responseText;
+				}
+				xhr.open('post', 'upload.php');
+				xhr.send(formData);
+				console.log(files);
+				}
+				$('#click-upload').on('change', function(e){
+					upload(e.dataTransfer.files);
+				});
+				dropzone.ondrop = function(e){
+					e.preventDefault();
+					this.className = 'drop-zone';
+					upload(e.dataTransfer.files);
+				};
+				dropzone.ondragover = function(){
+					this.className = 'drop-zone dragover';
+					return false;
+				};
+				dropzone.ondragleave = function(){
+					this.className = 'drop-zone';
+					return false;
+				};
+			}());
 	// Edit
 	$('#edit-image-button').click(function() {
 		launchImageEditor();
@@ -68,22 +102,20 @@ $(document).ready(function() {
 		if (e.stopPropagation) e.stopPropagation(); 
 	})
 	.on('click', function(e) {
-
 		// Click anywhere in Droparea to upload file
 	  $('#click-upload').click();
 	})
 	.on('drop', function(e) {
-
 		// Get the dropped file
 		var file = e.originalEvent.dataTransfer.files[0];
 		validateFileType(file);
 	});
-
 	// Click
 	//// Takes file from file chooser
 	$('#click-upload').on('change', function(e){
 		var file = e.originalEvent.target.files[0];
 		validateFileType(file);
+
 	});
 	// Checks if the file type is in the array of supported types
 	function fileIsSupported(file) {
@@ -99,12 +131,11 @@ $(document).ready(function() {
 	function setImage(file) {
 		imageElement.attr('src', window.URL.createObjectURL(file));
 		originalImageSrc = imageElement.attr('src');
+		console.log();
 	}
-
 	function clearImage() {
 		imageElement.attr('src', '');
 	}
-
 	function validateFileType(file) {
 		if (fileIsSupported(file)) {
 			setImage(file);
@@ -117,22 +148,18 @@ $(document).ready(function() {
 			return false;
 		}
 	}
-
 	function launchImageEditor() {
-
 		if (!originalImageSrc) {
 			alert('Faça o upload de alguma imagem primeiro!');
 			return false;
 		}
 		// Get the image to be edited
 		// `[0]` gets the image itself, not the jQuery object
-
 		currentImage = $('#editable-image')[0];
 		csdkImageEditor.launch({
 			image: currentImage.id,
 			//url: currentImage.src
 		});
-
 	}
 	/*function downloadImage() {
 		var url = currentImage ? currentImage.src : originalImageSrc;
@@ -146,4 +173,5 @@ $(document).ready(function() {
 		link.download = 'my-pic';
 		link.click();
 	}*/
+
 });
