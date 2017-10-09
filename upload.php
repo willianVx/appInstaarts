@@ -1,5 +1,5 @@
 <?php 
-	include "conexao.php";
+	//include "conexao.php";
 	header('Content-Type: application/json');
 
 	$uploaded = array();
@@ -16,13 +16,3 @@
 	}
 	echo json_encode($uploaded);
  ?>
-
-
-
-
-
-
-
-
-
-

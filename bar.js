@@ -179,5 +179,6 @@ $(document).ready(function(){
 			$("#londres-select-color").removeClass("green");
 			$("#santiago-select-color").removeClass("green");
 		}
-	
+		
 });
+
