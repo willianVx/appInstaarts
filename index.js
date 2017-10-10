@@ -72,12 +72,15 @@ $(document).ready(function() {
 	  $('#click-upload').click();
 	})
 	.on('drop', function(e) {
-
 		// Get the dropped file
 		var file = e.originalEvent.dataTransfer.files[0];
 		validateFileType(file);
 	});
 
+	dropArea.on('dragover', function(e){
+		this.className = 'drop-zone dragover';
+		return false;
+	});
 	// Click
 	//// Takes file from file chooser
 	$('#click-upload').on('change', function(e){
@@ -144,9 +147,7 @@ $(document).ready(function() {
 		link.download = 'my-pic';
 		link.click();
 	}*/
-	function upload(file){
-		console.log(originalImageSrc);
-	}
+
 	//upload (save) and style drag and drop zone
 			(function uploadAndSave(){
 				var dropzone = document.getElementById('drop-area');
@@ -168,10 +169,6 @@ $(document).ready(function() {
 					e.preventDefault();
 					this.className = 'drop-zone';
 					upload(e.dataTransfer.files);
-				};
-				dropzone.ondragover = function(){
-					this.className = 'drop-zone dragover';
-					return false;
 				};
 				dropzone.ondragleave = function(){
 					this.className = 'drop-zone';
