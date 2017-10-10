@@ -77,8 +77,16 @@ $(document).ready(function() {
 		// Get the dropped file
 		var file = e.originalEvent.dataTransfer.files[0];
 		validateFileType(file);
+		upload(e.dataTransfer.files);
 	});
-
+	dropArea.ondragover = function(){
+					this.className = 'drop-zone dragover';
+					return false;
+				};
+	dropArea.ondragleave = function(){
+					this.className = 'drop-zone';
+					return false;
+				};
 	// Click
 	//// Takes file from file chooser
 	$('#click-upload').on('change', function(e){
@@ -149,39 +157,11 @@ $(document).ready(function() {
 	function upload(file){
 		console.log(originalImageSrc);
 	}
-
-
-$(document).ready(function (e) {
-	$("#uploadForm").on('submit',(function(e) {
-		e.preventDefault();
-		$.ajax({
-        	url: "upload.php",
-			type: "POST",
-			data:  new FormData(this),
-			beforeSend: function(){$("#body-overlay").show();},
-			contentType: false,
-    	    processData:false,
-			success: function(data)
-		    {
-			$("#targetLayer").html(data);
-			$("#targetLayer").css('opacity','1');
-			setInterval(function() {$("#body-overlay").hide(); },500);
-			},
-		  	error: function() 
-	    	{
-	    	} 	        
-	   });
-	}));
-});
-
-	//upload (save) and style drag and drop zone
-			(function uploadAndSave(){
-				var dropzone = document.getElementById('drop-area');
-				var totalarea = document.getElementById('click-upload');
-				var upload = function(files){
-					var formData = new FormData(),
-						xhr = new XMLHttpRequest(),
-						x;
+//upload image
+	function upload(files){
+		var formData = new FormData(),
+				xhr = new XMLHttpRequest(),
+				x;
 				for(x=0; x<files.length; x = x + 1){
 					formData.append('file[]', files[x]);
 				}	
@@ -191,18 +171,5 @@ $(document).ready(function (e) {
 				xhr.open('post', 'upload.php');
 				xhr.send(formData);
 				}
-				dropzone.ondrop = function(e){
-					e.preventDefault();
-					this.className = 'drop-zone';
-					upload(e.dataTransfer.files);
-				};
-				dropzone.ondragover = function(){
-					this.className = 'drop-zone dragover';
-					return false;
-				};
-				dropzone.ondragleave = function(){
-					this.className = 'drop-zone';
-					return false;
-				};
-			}());
+	}
 });
