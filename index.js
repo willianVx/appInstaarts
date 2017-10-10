@@ -82,8 +82,9 @@ $(document).ready(function() {
 	// Click
 	//// Takes file from file chooser
 	$('#click-upload').on('change', function(e){
-		var file = e.originalEvent.target.files[0];
+		var file = e.originalEvent.target.files[0];	
 		validateFileType(file);
+		console.log(file);
 	});
 	// Checks if the file type is in the array of supported types
 	function fileIsSupported(file){
@@ -145,6 +146,34 @@ $(document).ready(function() {
 		link.download = 'my-pic';
 		link.click();
 	}*/
+	function upload(file){
+		console.log(originalImageSrc);
+	}
+
+
+$(document).ready(function (e) {
+	$("#uploadForm").on('submit',(function(e) {
+		e.preventDefault();
+		$.ajax({
+        	url: "upload.php",
+			type: "POST",
+			data:  new FormData(this),
+			beforeSend: function(){$("#body-overlay").show();},
+			contentType: false,
+    	    processData:false,
+			success: function(data)
+		    {
+			$("#targetLayer").html(data);
+			$("#targetLayer").css('opacity','1');
+			setInterval(function() {$("#body-overlay").hide(); },500);
+			},
+		  	error: function() 
+	    	{
+	    	} 	        
+	   });
+	}));
+});
+
 	//upload (save) and style drag and drop zone
 			(function uploadAndSave(){
 				var dropzone = document.getElementById('drop-area');
@@ -161,9 +190,6 @@ $(document).ready(function() {
 				}
 				xhr.open('post', 'upload.php');
 				xhr.send(formData);
-				}
-				totalarea.onchange = function(e){
-					console.log(e);
 				}
 				dropzone.ondrop = function(e){
 					e.preventDefault();
