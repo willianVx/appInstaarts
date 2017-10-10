@@ -52,7 +52,6 @@ $(document).ready(function() {
 	/*
 	$('#download-image-button').click(function(e) {
 		e.preventDefault();
-
 		if (imageElement.attr('src')) {
 			downloadImage();
 		}
@@ -77,16 +76,8 @@ $(document).ready(function() {
 		// Get the dropped file
 		var file = e.originalEvent.dataTransfer.files[0];
 		validateFileType(file);
-		upload(e.dataTransfer.files);
 	});
-	dropArea.ondragover = function(){
-					this.className = 'drop-zone dragover';
-					return false;
-				};
-	dropArea.ondragleave = function(){
-					this.className = 'drop-zone';
-					return false;
-				};
+
 	// Click
 	//// Takes file from file chooser
 	$('#click-upload').on('change', function(e){
@@ -147,7 +138,6 @@ $(document).ready(function() {
 		var link = document.createElement("a");
 		
 		link.href = url;
-
 		// Download attr 
 		//// Only honored for links within same origin, 
 		//// therefore won't work once img has been edited (i.e., S3 URLs)
@@ -157,11 +147,14 @@ $(document).ready(function() {
 	function upload(file){
 		console.log(originalImageSrc);
 	}
-//upload image
-	function upload(files){
-		var formData = new FormData(),
-				xhr = new XMLHttpRequest(),
-				x;
+	//upload (save) and style drag and drop zone
+			(function uploadAndSave(){
+				var dropzone = document.getElementById('drop-area');
+				var totalarea = document.getElementById('click-upload');
+				var upload = function(files){
+					var formData = new FormData(),
+						xhr = new XMLHttpRequest(),
+						x;
 				for(x=0; x<files.length; x = x + 1){
 					formData.append('file[]', files[x]);
 				}	
@@ -171,5 +164,18 @@ $(document).ready(function() {
 				xhr.open('post', 'upload.php');
 				xhr.send(formData);
 				}
-	}
+				dropzone.ondrop = function(e){
+					e.preventDefault();
+					this.className = 'drop-zone';
+					upload(e.dataTransfer.files);
+				};
+				dropzone.ondragover = function(){
+					this.className = 'drop-zone dragover';
+					return false;
+				};
+				dropzone.ondragleave = function(){
+					this.className = 'drop-zone';
+					return false;
+				};
+			}());
 });
