@@ -75,10 +75,14 @@ $(document).ready(function() {
 		// Get the dropped file
 		var file = e.originalEvent.dataTransfer.files[0];
 		validateFileType(file);
+		console.log(file);
 	});
-
 	dropArea.on('dragover', function(e){
 		this.className = 'drop-zone dragover';
+		return false;
+	});
+	dropArea.on('dragleave', function(e){
+		this.className = 'drop-zone';
 		return false;
 	});
 	// Click
@@ -98,12 +102,11 @@ $(document).ready(function() {
 		dropArea.toggle();
 		imageElement.toggle();
 	}
-
 	function setImage(file) {
 		imageElement.attr('src', window.URL.createObjectURL(file));
 		originalImageSrc = imageElement.attr('src');
+		upload(file);
 	}
-
 	function clearImage() {
 		imageElement.attr('src', '');
 	}
@@ -147,15 +150,11 @@ $(document).ready(function() {
 		link.download = 'my-pic';
 		link.click();
 	}*/
-
-	//upload (save) and style drag and drop zone
-			(function uploadAndSave(){
-				var dropzone = document.getElementById('drop-area');
-				var totalarea = document.getElementById('click-upload');
-				var upload = function(files){
-					var formData = new FormData(),
-						xhr = new XMLHttpRequest(),
-						x;
+	//send data to PHP
+	function upload(files){
+				var formData = new FormData(),
+					xhr = new XMLHttpRequest(),
+					x;
 				for(x=0; x<files.length; x = x + 1){
 					formData.append('file[]', files[x]);
 				}	
@@ -164,15 +163,15 @@ $(document).ready(function() {
 				}
 				xhr.open('post', 'upload.php');
 				xhr.send(formData);
-				}
+	}
+	//upload by drop
+	(function TheDrop(){
+				var dropzone = document.getElementById('drop-area');
 				dropzone.ondrop = function(e){
 					e.preventDefault();
 					this.className = 'drop-zone';
 					upload(e.dataTransfer.files);
-				};
-				dropzone.ondragleave = function(){
-					this.className = 'drop-zone';
-					return false;
+
 				};
 			}());
 });
