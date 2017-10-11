@@ -1,6 +1,6 @@
 
 //send data to PHP by click and set progress bar 
-$(function(){
+/*$(function(){
 	$('#myForm').ajaxForm({
 		beforeSend:function(){
 			$(".progress").show();
@@ -18,3 +18,4 @@ $(function(){
 	});
 	$(".progress").hide();
 });
+*/

@@ -67,8 +67,7 @@ $(document).ready(function() {
 		if (e.stopPropagation) e.stopPropagation(); 
 	})
 	.on('click', function(e) {
-
-		Click anywhere in Droparea to upload file
+		//Click anywhere in Droparea to upload file
 	  	$('#click-upload').click();
 	})
 	.on('drop', function(e) {
