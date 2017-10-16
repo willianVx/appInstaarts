@@ -66,10 +66,10 @@ $(document).ready(function() {
 		if (e.preventDefault) e.preventDefault(); 
 		if (e.stopPropagation) e.stopPropagation(); 
 	})
-	.on('click', function(e) {
+	/*.on('click', function(e) {
 		//Click anywhere in Droparea to upload file
-	  	$('#click-upload').click();
-	})
+	  	$('#fileToUpload').click();
+	})*/
 	.on('drop', function(e) {
 		// Get the dropped file
 		var file = e.originalEvent.dataTransfer.files[0];
@@ -85,7 +85,7 @@ $(document).ready(function() {
 	});
 	// Click
 	//// Takes file from file chooser
-	$('#click-upload').on('change', function(e){
+	$('#fileToUpload').on('change', function(e){
 		var file = e.originalEvent.target.files[0];	
 		validateFileType(file);
 		console.log(file);
@@ -161,7 +161,6 @@ $(document).ready(function() {
 				xhr.open('post', 'upload.php');
 				xhr.send(formData);
 	}
-
 	//upload by drop
 	(function TheDrop(){
 				var dropzone = document.getElementById('drop-area');
@@ -169,7 +168,26 @@ $(document).ready(function() {
 					e.preventDefault();
 					this.className = 'drop-zone';
 					upload(e.dataTransfer.files);
-
 				};
 			}());
+});
+	//send data to PHP by click and set progress bar 
+$(function(){
+	$('#myForm').ajaxForm({
+		beforeSend:function(){
+			$(".progress").show();
+		},
+		uploadProgress:function(event,position,total,percentComplete){
+			$(".progress-bar").width(percentComplete+"%");
+			//$(".sr-only").html(percentComplete+"%");
+		},
+		success:function(){
+			$(".progress").hide();
+		},
+		complete:function(){
+			//$(".image").html("<img src='"+response.response.Text+"'width='100%'/>")
+			//$("#myModal").modal("hide");
+		}
+	});
+	$(".progress").hide();
 });
