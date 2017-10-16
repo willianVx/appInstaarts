@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 	// The visibility of these 2 elements is toggled by `toggleDragDrop()`
 	var imageElement = $('#editable-image').hide();
 	var dropArea = $("#drop-area");
@@ -16,7 +15,7 @@ $(document).ready(function() {
 		onSave: function(imageID, newURL) {
 			currentImage.src = newURL;
 			csdkImageEditor.close();
-			console.log(newURL);
+			console.log(currentImage.src);
 		},
 		onError: function(errorObj) {
 			console.log(errorObj.code);
@@ -30,7 +29,6 @@ $(document).ready(function() {
 	});
 	// Reset
 	$('#reset-image-button').click(function() {
-
 		if ($('#editable-image').attr('src') === originalImageSrc || !originalImageSrc) {
 			alert('Você ainda não fez alterações');
 		}
@@ -88,7 +86,6 @@ $(document).ready(function() {
 	$('#fileToUpload').on('change', function(e){
 		var file = e.originalEvent.target.files[0];	
 		validateFileType(file);
-		console.log(file);
 	});
 	// Checks if the file type is in the array of supported types
 	function fileIsSupported(file){
@@ -161,7 +158,7 @@ $(document).ready(function() {
 				xhr.open('post', 'upload.php');
 				xhr.send(formData);
 	}
-	//upload by drop
+	//upload by drop (quando o usuario arrasta a imagem para o dropzone)
 	(function TheDrop(){
 				var dropzone = document.getElementById('drop-area');
 				dropzone.ondrop = function(e){
@@ -191,3 +188,4 @@ $(function(){
 	});
 	$(".progress").hide();
 });
+
