@@ -595,6 +595,16 @@ $(document).ready(function(){
         console.log(nome_acabamento);
         console.log(x,y);
         console.log(preco);
+
+        $.post("order.php",{
+                moldura: nome_moldura,
+                acabamento: nome_acabamento,
+                largura: x,
+                altura: y,
+                preco: preco
+            },function(data,status){
+                console.log(data);
+            });
     });
 });
 
