@@ -15,7 +15,7 @@ $(document).ready(function() {
 		onSave: function(imageID, newURL) {
 			currentImage.src = newURL;
 			csdkImageEditor.close();
-			console.log(currentImage.src);
+			console.log(currentImage);
 		},
 		onError: function(errorObj) {
 			console.log(errorObj.code);
@@ -23,6 +23,7 @@ $(document).ready(function() {
 			console.log(errorObj.args);
 		}
 	});
+	
 	// Edit
 	$('#edit-image-button').click(function() {
 		launchImageEditor();
@@ -169,6 +170,7 @@ $(document).ready(function() {
 			}());
 });
 	//send data to PHP by click and set progress bar 
+
 $(function(){
 	$('#myForm').ajaxForm({
 		beforeSend:function(){
@@ -176,14 +178,15 @@ $(function(){
 		},
 		uploadProgress:function(event,position,total,percentComplete){
 			$(".progress-bar").width(percentComplete+"%");
-			//$(".sr-only").html(percentComplete+"%");
+			$(".sr-only").html(percentComplete+"%");
 		},
 		success:function(){
 			$(".progress").hide();
 		},
 		complete:function(){
-			//$(".image").html("<img src='"+response.response.Text+"'width='100%'/>")
-			//$("#myModal").modal("hide");
+			//$("#response").html(event);
+			console.log(event);
+
 		}
 	});
 	$(".progress").hide();
