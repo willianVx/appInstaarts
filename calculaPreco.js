@@ -356,8 +356,6 @@ function uvAcm(){
 */
 
 //classica
-
-
 function florenca(){
     molduraTipo3();
       if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
@@ -560,10 +558,3 @@ function semMoldura(){
     formulaTotal();
     document.getElementById("s-moldura").innerHTML = "Sem Moldura";
 }
-
-
-
-
-
-
-
