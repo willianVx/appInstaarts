@@ -16,9 +16,18 @@
     var uv_acm = 1553;
     var precoBase = meta3mm;
 
+    var papel_algodao = 552;
+    var papel_fosco = 414;
+    var papel_acetinato = 460;
+    var papel_brilhante = 437;
+    var papel_canvas = 633;
+
     var florencaM = 2947;
 
     var tipoMoldura = 0;
+    var nome_moldura = " Sem Moldura ";
+    var nome_acabamento = " Metacrilato 3mm ";
+    var preco = 343.60;
 
 function T12x18(){
 	//document.getElementById("s-tamanho").innerHTML = "12x18cm" + " ";
@@ -171,6 +180,7 @@ function meta7(){
                 }
     }            
     var meta7mm = 2467;
+    window.nome_acabamento = "Metacrilato 7mm";
     window.precoBase = meta7mm;
     document.getElementById("s-metacrilato").innerHTML = "Metacrilato 7mm" + " ";
     /*var preco = ((x * y * material / 10000)+moldura)+40; 
@@ -194,6 +204,7 @@ function meta5(){
                 }
     }  
     window.meta5mm = 1771;
+    window.nome_acabamento = "Metacrilato 5mm";
     window.precoBase = window.meta5mm;
     document.getElementById("s-metacrilato").innerHTML = "Metacrilato 5mm" + " ";
     formulaTotal();
@@ -215,6 +226,7 @@ function meta4(){
                 }
     }  
     window.meta4mm = 1392;
+    window.nome_acabamento = "Metacrilato 4mm";
     window.precoBase = window.meta4mm;
     document.getElementById("s-metacrilato").innerHTML = "Metacrilato 4mm" + " ";
     formulaTotal();
@@ -236,6 +248,7 @@ function meta3(){
                 }
     }  
     window.meta3mm = 1265;
+    window.nome_acabamento = "Metacrilato 3mm";
     window.precoBase = window.meta3mm;
     document.getElementById("s-metacrilato").innerHTML = "Metacrilato 3mm" + " ";
     formulaTotal();
@@ -257,6 +270,7 @@ function acm5(){
                 }
     }  
     window.acm5mm = 1518;
+    window.nome_acabamento = "ACM 5mm";
     window.precoBase = window.acm5mm;
     document.getElementById("s-metacrilato").innerHTML = "ACM 5mm" + " ";
     formulaTotal();
@@ -265,29 +279,43 @@ function acm5(){
 // papeis
 
 function papelAlgodao(){
-    window.material = 552;
+    window.precoBase = window.papel_algodao;
+    window.somaMoldura = 0;
+    window.nome_acabamento = "Papel algodao";
     document.getElementById("s-metacrilato").innerHTML = "Papel algodão" + " ";
+    document.getElementById("s-moldura").innerHTML = " Sem Moldura ";
     formulaTotal();
-   
 }
 function acetinato(){
-    window.material = 460;
+    window.precoBase = window.papel_acetinato;
+    window.somaMoldura = 0;
+    window.nome_acabamento = "acetinato";
     document.getElementById("s-metacrilato").innerHTML = "Acetinato" + " ";
+    document.getElementById("s-moldura").innerHTML = " Sem Moldura ";
     formulaTotal();
 }
 function brilhante(){
-    window.material = 437;
+    window.precoBase = window.papel_brilhante;
+    window.somaMoldura = 0;
+    window.nome_acabamento = "Brilhante";
     document.getElementById("s-metacrilato").innerHTML = "Brilhante" + " ";
+    document.getElementById("s-moldura").innerHTML = " Sem Moldura ";
     formulaTotal();
 }
 function fosco(){
-    window.material = 414;
+    window.precoBase = window.papel_fosco;
+    window.somaMoldura = 0;
+    window.nome_acabamento = "Fosco";
     document.getElementById("s-metacrilato").innerHTML = "Fosco" + " ";
+    document.getElementById("s-moldura").innerHTML = " Sem Moldura ";
     formulaTotal();
 }
 function canvas(){
-    window.material = 633;
+    window.precoBase = window.papel_canvas;
+    window.somaMoldura = 0;
+    window.nome_acabamento = "Canvas";
     document.getElementById("s-metacrilato").innerHTML = "canvas" + " ";
+    document.getElementById("s-moldura").innerHTML = " Sem Moldura ";
     formulaTotal();
 }
 //Impressão UV 
@@ -308,6 +336,7 @@ function uvPs(){
                 }
     }  
     window.uvPsmm = 1265;
+    window.nome_acabamento = "UVps";
     window.precoBase = window.uvPsmm;
     document.getElementById("s-metacrilato").innerHTML = "UV Sobre PS" + " ";
     formulaTotal();
@@ -330,6 +359,7 @@ function uvAcm(){
                 }
     }  
     window.uv_acm = 1553;
+    window.nome_acabamento = "UV ACM";
     window.precoBase = window.uv_acm;    
     document.getElementById("s-metacrilato").innerHTML = "UV Sobre ACM" + " ";
     formulaTotal();
@@ -340,30 +370,48 @@ function uvAcm(){
 */
 
 //classica
-
-
 function florenca(){
     molduraTipo3();
-    document.getElementById("s-moldura").innerHTML = "Florença" + " ";
+    window.nome_moldura = "florenca";
+      if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Florença" + " ";
+    }
     formulaTotal();
 }
 
 
 function instambul(){
     molduraTipo3();
-    document.getElementById("s-moldura").innerHTML = "Istambul" + " ";
+    window.nome_moldura = "instambul";
+      if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Istanbul" + " ";
+    }
     formulaTotal();
 }
 
 function paris(){ 
     molduraTipo3();
-    document.getElementById("s-moldura").innerHTML = "Paris" + " ";
+    window.nome_moldura = "paris";
+      if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Paris" + " ";
+    }
     formulaTotal();
 }
 
 function roma(){
-     molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "Roma" + " ";
+    molduraTipo1();
+    window.nome_moldura = "roma";
+      if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Roma" + " ";
+    }
     formulaTotal();
 
 }
@@ -371,36 +419,64 @@ function roma(){
 //contemporanea
 
 function atenas(){
-     molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "Atenas" + " ";
+    molduraTipo1();
+    window.nome_moldura = "basel";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Atenas" + " ";
+    }
     formulaTotal();
-  
 }
 function basel(){
      molduraTipo2();
-    document.getElementById("s-moldura").innerHTML = "Basel" + " ";
+     window.nome_moldura = "basel";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Basel" + " ";
+    }
     formulaTotal();
 }
 function berlim(){
     molduraTipo3();
-    document.getElementById("s-moldura").innerHTML = "Berlim" + " ";
+    window.nome_moldura = "berlim";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Berlim" + " ";
+    }
     formulaTotal();
 }
 function miami(){
-     molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "Miami" + " ";
+    molduraTipo1();
+    window.nome_moldura = "miami";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Miami" + " ";
+    }
     formulaTotal();
  
 }
 function novaYork(){
     molduraTipo2();
-    document.getElementById("s-moldura").innerHTML = "New York" + " ";
+    window.nome_moldura = "nova york";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Nova York" + " ";
+    }
     formulaTotal();
-
 }
 function saoPaulo(){
     molduraTipo2();
-    document.getElementById("s-moldura").innerHTML = "São Paulo" + " ";
+    window.nome_moldura = "Sao paulo";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "São Pulo" + " ";
+    }
     formulaTotal();
 }
 
@@ -408,28 +484,53 @@ function saoPaulo(){
 
 function amazonas(){
     molduraTipo2();
-    document.getElementById("s-moldura").innerHTML = "Amazonas" + " ";
+    window.nome_moldura = "Amazonas";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Amazonas" + " ";
+    }
     formulaTotal();
 }
 function amsterdam(){
     molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "amsterdam" + " ";
+    window.nome_moldura = "Amsterdam";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Amsterdam" + " ";
+    }
     formulaTotal();
 }
 function buenosAires(){
      molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "Buenos Aires" + " ";
+     window.nome_moldura = "Buenos Aires";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Buenos Aires" + " ";
+    }
     formulaTotal();
 }
 function londres(){
      molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "Londres" + " ";
+     window.nome_moldura = "Londres";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Londres" + " ";
+    }
     formulaTotal();
 
 }
 function santiago(){
-     molduraTipo1();
-    document.getElementById("s-moldura").innerHTML = "Santiago" + " ";
+    molduraTipo1();
+    window.nome_moldura = "Santiago";
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+    }else{
+        document.getElementById("s-moldura").innerHTML = "Santiago" + " ";
+    }
     formulaTotal();
 }
 function formulaTotal(){
@@ -438,21 +539,28 @@ function formulaTotal(){
         var precoBase = window.precoBase + window.somaMoldura;
         var preco = (x * y * precoBase/10000) + 40;
         document.getElementById("s-preco").innerHTML = "R$: " + preco.toFixed(2);
+        window.preco = preco;
     }
 function molduraTipo3(){
-        tipoMoldura = 3;
-        if (precoBase == meta3mm) {
-            somaMoldura = 320;
-        }else if (precoBase == meta4mm) {
-            somaMoldura = 506;
-        }
-        else{
-            somaMoldura = 480;
-        }
+    tipoMoldura = 3;
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        alert("Não é possível escolher moldura para esse acabamento");
+    }
+    else if (precoBase == meta3mm) {
+    somaMoldura = 320;
+    }else if (precoBase == meta4mm){
+    somaMoldura = 506;
+    }
+    else{
+    somaMoldura = 480;
+    }
 }
 function molduraTipo2(){
     tipoMoldura = 2;
-    if (precoBase == meta3mm) {
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        alert("Não é possível escolher moldura para esse acabamento");
+    }
+    else if (precoBase == meta3mm) {
         somaMoldura = 160;
     }else if (precoBase == meta4mm) {
         somaMoldura = 345;
@@ -463,7 +571,10 @@ function molduraTipo2(){
 }
 function molduraTipo1(){
     tipoMoldura = 1;
-    if (precoBase == meta3mm) {
+    if (precoBase == papel_algodao || precoBase == papel_fosco || precoBase == papel_brilhante || precoBase == papel_acetinato) {
+        alert("Não é possível escolher moldura para esse acabamento");
+    }
+    else if (precoBase == meta3mm) {
         somaMoldura = 0;
     }else if (precoBase == meta4mm) {
         somaMoldura = 153;
@@ -472,6 +583,42 @@ function molduraTipo1(){
         somaMoldura = 160;
     }
 }
+function semMoldura(){
+    window.somaMoldura = 0;
+    formulaTotal();
+    document.getElementById("s-moldura").innerHTML = "Sem Moldura";
+}
+//upload de acabamento, moldura e preco 
+$(document).ready(function(){
+    $("#comprar-botao").click(function(){
+        console.log(nome_moldura);
+        console.log(nome_acabamento);
+        console.log(x,y);
+        console.log(preco);
+
+        $.post("order.php",{
+                moldura: nome_moldura,
+                acabamento: nome_acabamento,
+                largura: x,
+                altura: y,
+                preco: preco
+            },function(data,status){
+                console.log(data);
+            });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
