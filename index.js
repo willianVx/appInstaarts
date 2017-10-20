@@ -186,7 +186,6 @@ $(function(){
 		complete:function(){
 			//$("#response").html(event);
 			console.log(event);
-
 		}
 	});
 	$(".progress").hide();

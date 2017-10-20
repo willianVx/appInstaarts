@@ -1,8 +1,11 @@
 <?php 
 include "conexao.php";
+session_destroy();
+session_start();
 $target_dir = "uploads/";
 $target_file = $target_dir . md5(date("h:i:sa")).basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
+$_SESSION["imagemOriginal"] = "$target_file";
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -30,7 +33,7 @@ if ($_FILES["fileToUpload"]["size"] > 20000000){
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-    echo "Sorry, only JPG, JPEG & PNG  files are allowed.";
+    echo "Sorry, only JPEG & PNG  files are allowed.";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
